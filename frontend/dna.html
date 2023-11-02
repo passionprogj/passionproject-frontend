@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+		body {
+			font-family: Geraldton, 'Oswald', Arial, sans-serif;
+		}
+		
+		.search-container {
+			text-align: center;
+			margin: 20px;
+		}
+		
+		input[type="text"] {
+			width: 300px;
+			padding: 10px;
+			font-size: 16px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			font-family: Geraldton;
+		}
+		
+		button {
+			padding: 10px 20px;
+			font-size: 16px;
+			font-family: Geraldton;
+			background-color: #253e5b;
+			color: #fff;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		
+		button:hover {
+			background-color: #578ad3;
+		}
+
+		.header {
+			padding: 10px;
+			text-align: center;
+			background: #63a5d2;
+			color: white;
+			font-size: 30px;
+		  }
+
+		
+	</style>
+
+	<script>
+		const searchInput = document.getElementById('search-input');
+const searchButton = document.getElementById('search-button');
+const searchResults = document.getElementById('search-results');
+
+searchButton.addEventListener('click', performSearch);
+
+function performSearch() {
+    const query = searchInput.value;
+    if (query.trim() === '') {
+        alert('Please enter a search query.');
+        return;
+    }
+
+    // You can replace this URL with your API endpoint.
+    const apiUrl = `https://api.example.com/search?q=${query}`;
+
+    fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+            displaySearchResults(data);
+        })
+        .catch(error => {
+            console.error('API request error:', error);
+        });
+}
+
+function displaySearchResults(results) {
+    // Clear previous results
+    searchResults.innerHTML = '';
+
+    // Display new results
+    results.forEach(result => {
+        const resultElement = document.createElement('div');
+        resultElement.className = 'result';
+        resultElement.textContent = result.title;
+        searchResults.appendChild(resultElement);
+    });
+}
+
+	</script>
+</head>
+
+<div class="header">
+	<h1>DNA Analyzer</h1>
+	<p>Type in your desired sequence into the searchbar below!</p>
+  </div>
+<div> 
+</div>
+<body>
+    <div class="search-container">
+        <input type="text" id="search-input" placeholder="Enter your search query">
+        <button id="search-button">Search</button>
+    </div>
+    <div id="search-results"></div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      font-family: Geraldton, "Helvetica";
+      height: 100vh;
+   }
+   h1 {
+      margin-top: 20px;
+      margin-bottom: 0;
+      font-size: 2em;
+      font-weight: normal;
+      line-height: 48px;
+   }
+   h1 + p {
+      margin-top: 0;
+   }
+   
+   /*
+      Infographic Structure
+      All the rules in here are common to every element
+      DO NOT edit this part -- this affects the structure!
+   */
+   #infographic {
+      --m: 0.75em;
+      padding: 1em;
+      margin: 0 calc(var(--m) * 3);
+   }
+   #infographic section {
+      display: flex;
+   }
+   #infographic section article {
+      --magic: 20px;
+      flex: 0 0 calc(100% / 5 - 1.5em);
+      margin: 0 var(--m);
+   }
+   #infographic section article:last-child {
+      margin-right: 0;
+   }
+   #infographic section article header {
+      text-align: center;
+      height: 60px;
+      margin: 0;
+      padding-top: 1em;
+      font-weight: bold;
+      font-size: 1.1em;
+   }
+   #infographic section article div {
+      height: calc(var(--magic) * 4);
+      background: var(--more-magic);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: #fff;
+      padding: 0 calc(var(--magic) + 0.5em);
+      text-transform: uppercase;
+   }
+   #infographic section article div:before,
+   #infographic section article div:after {
+      content: "";
+      position: absolute;
+      width: var(--magic);
+      border-top: calc(var(--magic) * 2) solid transparent;
+      border-bottom: calc(var(--magic) * 2) solid transparent;
+      border-left: var(--magic) solid #fff;
+      z-index: 2;
+      left: 0;
+      top: 0;
+   }
+   #infographic section article div:after {
+      left: 100%;
+      border-left: var(--magic) solid var(--more-magic);
+   }
+   #infographic section article div.badge {
+      --magic: 8px;
+      --more-magic: #363636;
+      left: 100%;
+      top: calc(var(--magic) * 2);
+      width: 40%;
+      transform: translateX(-50%);
+      z-index: 9;
+      clip-path: polygon(0 0, 100% 0, 110% 50%, 100% 100%, 0 100%, 10% 50%);
+      font-weight: normal;
+   }
+   #infographic section article div.badge:before {
+      display: none;
+   }
+   #infographic section article footer {
+      padding: var(--magic);
+   }
+   
+   /*
+      Section .ig_hader
+      Here you can adjust the look and feel of the header section
+   */
+   #infographic section.ig_header {
+      border: 1px dashed grey;
+      padding: 1em;
+      margin: var(--m);
+   }
+   #infographic section.ig_header span {
+      flex: 0 0 calc(100% / 4);
+   }
+   #infographic section.ig_header span:first-child {
+      background: lightgrey;
+      margin-right: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25em;
+   }
+   
+   /*
+      Section .ig_body
+      Here you can adjust the look and feel of each article
+   */
+   #infographic section.ig_body article:nth-child(1) {
+      background: #bbd1ab;
+      --more-magic: #77a357;
+   }
+   #infographic section.ig_body article:nth-child(2) {
+      background: #75b6e1;
+      --more-magic: #206695;
+   }
+   #infographic section.ig_body article:nth-child(3) {
+      background: #9dd0d6;
+      --more-magic: #398189;
+   }
+   #infographic section.ig_body article:nth-child(4) {
+      background: #9c7bc3;
+      --more-magic: #56337f;
+   }
+   #infographic section.ig_body article:nth-child(5) {
+      background: #af5050;
+      --more-magic: #631414;
+   }
+   
+   /*
+      Section .ig_footer and .ig_footer_2
+      Here you can adjust the two footer sections
+   */
+   #infographic section.ig_footer article,
+   #infographic section.ig_footer_2 article {
+      margin-top: var(--m);
+      --magic: 10px;
+      --more-magic: blue;
+   }
+   #infographic section.ig_footer article {
+      margin-left: calc(100% / 5 + 0.75em);
+      flex-basis: calc(100% - 100% / 5 - 2.25em);
+   }
+   #infographic section.ig_footer_2 article {
+      margin-left: 0.75em;
+      flex-basis: calc(100% - 2.25em);
+   }
+   
+  </style>
+</head>
+<body>
+
+<div id="infographic">
+   <section class="ig_body">
+      <article>
+         <header>
+            DNA
+         </header>
+         <div>
+            Deoxyribonucleic acid
+         </div>
+         <footer>
+          
+DNA, or <strong> deoxyribonucleic acid, </strong> is a molecule that contains the genetic instructions for the development, functioning, growth, and reproduction of all known living organisms and many viruses. It is often described as the genetic blueprint of life. DNA is a double-stranded molecule composed of nucleotides, each consisting of a phosphate group, a deoxyribose sugar molecule, and one of four nitrogenous bases: adenine (A), cytosine (C), guanine (G), or thymine (T). The specific sequence of these bases in DNA is what encodes genetic information. Through processes like replication and transcription, DNA is used to create RNA, which, in turn, directs the synthesis of proteins and controls various aspects of cellular function. The discovery of the structure of DNA by James Watson and Francis Crick in 1953 marked a pivotal moment in the history of biology and genetics.
+         </footer>
+      </article>
+      <article>
+         <header>
+            RNA
+         </header>
+         <div>
+            Ribonucleic Acid
+         </div>
+         <footer>
+          RNA, or </strong>ribonucleic acid, is a vital molecule in biology that plays a fundamental role in the flow of genetic information and protein synthesis. Unlike its counterpart DNA, RNA is typically single-stranded and uses the sugar ribose. It comes in several forms, including messenger RNA (mRNA), transfer RNA (tRNA), and ribosomal RNA (rRNA). mRNA carries genetic instructions from DNA to the ribosomes, where proteins are synthesized. tRNA assists in the translation of these instructions by delivering the appropriate amino acids to the ribosomes, and rRNA forms an integral part of the ribosomes themselves. RNA's versatility extends beyond protein synthesis, as it is involved in various cellular processes, including gene regulation and catalysis, making it a central player in the molecular machinery of life.
+         </footer>
+      </article>
+      <article>
+         <header>
+            Protein
+         </header>
+         <div>
+            Polypeptides
+         </div>
+         <footer>
+        <strong>Proteins </strong> are large, complex molecules that play crucial roles in the structure, function, and regulation of cells and tissues in living organisms. They are made up of long chains of smaller building blocks called amino acids. There are 20 different types of amino acids that can be combined in various sequences to form a wide variety of proteins.
+
+          Proteins have diverse functions in the body. They can serve as structural components, forming the framework of cells and tissues. They also act as enzymes, which are biological catalysts that facilitate chemical reactions in the body. Proteins are involved in transport, carrying molecules like oxygen in the blood (e.g., hemoglobin). They play roles in cell signaling, immune defense, and muscle contraction.
+          
+          The specific structure and function of a protein are determined by its unique sequence of amino acids, and any changes in this sequence can lead to alterations in protein function, which can have significant biological consequences. Proteins are essential for the growth, repair, and maintenance of the body, and they are a fundamental part of the molecular machinery of life.
+         </footer>
+      </article>
+      <article>
+         <header>
+            Summary
+         </header>
+         <div>
+            Central Dogma
+         </div>
+         <footer>
+          The <strong>central dogma</strong> of molecular biology is a fundamental concept that describes the flow of genetic information in living organisms. It consists of three main processes:
+
+          DNA Replication: The first step in the central dogma is the replication of DNA. During this process, the double-stranded DNA molecule is duplicated to create an identical copy. This ensures that genetic information is faithfully passed on to the next generation of cells during cell division.
+          
+          Transcription: In this step, a specific segment of DNA serves as a template to synthesize a complementary molecule called messenger RNA (mRNA). This process occurs in the cell's nucleus and is catalyzed by the enzyme RNA polymerase. The resulting mRNA carries the genetic code from DNA to the ribosomes in the cytoplasm, where protein synthesis takes place.
+          
+          Translation: Translation is the final step of the central dogma. During this process, the information carried by mRNA is used to assemble a specific sequence of amino acids, which then forms a protein. This occurs at the ribosomes in the cytoplasm, with the help of transfer RNA (tRNA) molecules that bring the appropriate amino acids to the ribosome based on the codons in the mRNA.
+          
+          In summary, the central dogma of molecular biology describes the sequential flow of genetic information, starting with DNA replication to create copies of the genetic code, followed by transcription to convert DNA into mRNA, and ultimately, translation to synthesize proteins based on the mRNA code. This fundamental concept underpins the processes of genetics and protein synthesis in all living organisms.
+         </footer>
+      </article>
+      <article>
+         <header>
+            Additional Information
+         </header>
+         <div>
+            Current Research
+         </div>
+         <footer>
+          <strong>Genome Editing: </strong>Techniques like CRISPR-Cas9 have revolutionized genome editing. Researchers are continually improving these methods for precise DNA manipulation. This technology has far-reaching implications for gene therapy, agriculture, and more.
+
+        <strong> Epigenetics: </strong> Epigenetics explores how external factors can influence gene expression without altering the underlying DNA sequence. Researchers are delving deeper into how epigenetic modifications impact health and disease, including cancer and developmental disorders.
+          
+        <strong> DNA Sequencing: </strong> DNA sequencing technologies are becoming more efficient and cost-effective. This enables large-scale genomic studies, personalized medicine, and a better understanding of genetic diversity within populations.
+          
+        <strong> Pharmacogenomics: </strong> This field examines how individual genetic variations affect drug responses. Tailoring medication regimens to a patient's genetic makeup is a growing area of research.
+          
+      <strong> Cancer Genomics: </strong> Understanding the genetic basis of cancer is a significant focus. Researchers are uncovering genetic mutations associated with different types of cancer, leading to more targeted treatments.
+          
+    <strong> Synthetic Biology:</strong> Synthetic biologists are engineering DNA to create novel organisms, biochemical pathways, and materials. This has applications in biotechnology, biofuels, and medicine.
+          
+  <strong> Ancient DNA: </strong> Advances in DNA extraction and sequencing have allowed researchers to study ancient DNA, shedding light on human evolution, migration, and prehistoric populations.
+          
+<strong>Genomic Data Privacy: </strong> With the increasing amount of genetic data being collected, researchers are exploring ways to protect individuals' genetic information, including developing secure data-sharing methods.
+          
+<strong> Non-Coding DNA: </strong>Much of the human genome consists of non-coding DNA, and researchers are working to understand its functions, which go beyond protein-coding genes and may have regulatory roles.
+          
+<strong> Telomere Research: </strong> Telomeres, the protective caps on the ends of chromosomes, have implications for aging and cancer. Research is ongoing to understand their role and potential interventions.
+          
+<strong>  Single-Cell Sequencing: </strong> Single-cell DNA sequencing allows researchers to analyze genetic diversity within tissues, which is crucial for understanding development, disease, and cellular heterogeneity.
+          
+<strong> Environmental DNA (eDNA): </strong> Researchers are using environmental DNA to monitor and study biodiversity in various ecosystems, from oceans to forests.
+         </footer>
+      </article>
+   </section>
+</div>
+
+</body>
+</html>
